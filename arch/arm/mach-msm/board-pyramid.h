@@ -77,7 +77,7 @@
 #define MSM_OVERLAY_BLT_BASE	(MSM_ION_SF_BASE - MSM_OVERLAY_BLT_SIZE)
 #define MSM_PMEM_AUDIO_BASE	0x6FB00000
 #define MSM_ION_WB_BASE		0x40400000
-#define MSM_ION_SF_BASE		(0x70300000 - MSM_ION_SF_SIZE)
+#define MSM_ION_SF_BASE		(0x70000000 - MSM_ION_SF_SIZE)
 #define MSM_FB_BASE             (0x40400000)  /*MSM_PMEM_AUDIO_BASE is 0x6BACA000*/
                                               /*to avoid alignment,  use 0x6BA00000 - 0xA00000*/
 
@@ -102,7 +102,7 @@
 #define MSM_PMEM_SMIPOOL_SIZE USER_SMI_SIZE
 
 #define PHY_BASE_ADDR1  0x48000000
-#define SIZE_ADDR1      0x2BA00000
+#define SIZE_ADDR1      0x2B400000
 
 /* GPIO definition */
 
