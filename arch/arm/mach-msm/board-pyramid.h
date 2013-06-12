@@ -101,7 +101,7 @@
 #define MSM_PMEM_SMIPOOL_SIZE USER_SMI_SIZE
 
 #define PHY_BASE_ADDR1  0x48000000
-#define SIZE_ADDR1      0x2BB00000
+#define SIZE_ADDR1      0x2B900000
 
 /* GPIO definition */
 
