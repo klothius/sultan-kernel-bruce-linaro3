@@ -1,5 +1,5 @@
 #!/bin/sh
-MAKE="200"
+MAKE="64"
 
 ## Set compiler location
 echo Setting compiler location...
@@ -8,7 +8,7 @@ export CROSS_COMPILE=/home/sultan/Downloads/arm-cortex_a8-linux-gnueabi-linaro_4
 
 ## Build Sultan kernel
 rm -f /home/sultan/sultan-kernel-bruce-linaro3/arch/arm/boot/zImage
-make -j$MAKE ARCH=arm
+time make -j$MAKE ARCH=arm
 sleep 1
 echo Copying and zipping modules plus zImage
 sleep 1
