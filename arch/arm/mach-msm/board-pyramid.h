@@ -59,28 +59,19 @@
 /* Note: must be multiple of 4096 */
 #define MSM_FB_SIZE roundup(MSM_FB_PRIM_BUF_SIZE + MSM_FB_EXT_BUF_SIZE, 4096)
 
-#define MSM_OVERLAY_BLT_SIZE   roundup(960 * ALIGN(540, 32) * 3 * 2, 4096)
-
-#define MSM_ION_HEAP_NUM	8
-#define MSM_ION_AUDIO_SIZE	0x4CF000
-#define MSM_ION_SF_SIZE 	0x4000000 /* 80 Mbytes */
+#define MSM_ION_HEAP_NUM	5
+#define MSM_ION_SF_SIZE 	0x23A0000 /* 80 Mbytes */
 #define MSM_ION_MM_FW_SIZE	0x200000 /* (2MB) */
 #define MSM_ION_MM_SIZE		0x3600000 /* (54MB) */
 #define MSM_ION_MFC_SIZE	SZ_8K
-#define MSM_ION_WB_SIZE		0x1E00000 /* 30MB */
 
-#define MSM_PMEM_SF_SIZE        0x4000000 /* 64 Mbytes */
-#define MSM_PMEM_ADSP_SIZE	0x239C000
+#define MSM_PMEM_ADSP_SIZE	0x3600000
 #define MSM_PMEM_AUDIO_SIZE	0x239000
 
-#define MSM_OVERLAY_BLT_BASE	(MSM_ION_SF_BASE - MSM_OVERLAY_BLT_SIZE)
-#define MSM_PMEM_AUDIO_BASE	0x6FB00000
-#define MSM_ION_WB_BASE		0x40400000
-#define MSM_ION_SF_BASE		(0x70000000 - MSM_ION_SF_SIZE)
-#define MSM_FB_BASE             (0x40400000)  /*MSM_PMEM_AUDIO_BASE is 0x6BACA000*/
-                                              /*to avoid alignment,  use 0x6BA00000 - 0xA00000*/
-
-#define MSM_PMEM_KERNEL_EBI1_BASE	(MSM_ION_AUDIO_BASE + MSM_ION_AUDIO_SIZE)
+#define MSM_PMEM_AUDIO_BASE	0x46400000
+#define MSM_ION_SF_BASE		(0x40400000)
+#define MSM_PMEM_ADSP_BASE	(MSM_FB_BASE - MSM_PMEM_ADSP_SIZE)
+#define MSM_FB_BASE             (0x70000000 - MSM_FB_SIZE)
 
 #define MSM_SMI_BASE          0x38000000
 #define MSM_SMI_SIZE          0x4000000
@@ -101,7 +92,7 @@
 #define MSM_PMEM_SMIPOOL_SIZE USER_SMI_SIZE
 
 #define PHY_BASE_ADDR1  0x48000000
-#define SIZE_ADDR1      0x2B500000
+#define SIZE_ADDR1      (MSM_PMEM_ADSP_BASE - 0x48000000)
 
 /* GPIO definition */
 
